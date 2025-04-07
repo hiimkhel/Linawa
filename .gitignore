@@ -25,3 +25,4 @@ dist-ssr
 
 /backend/privateKey.json
 /backend/.env
+/src/components/.env
