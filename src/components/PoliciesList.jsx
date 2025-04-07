@@ -13,12 +13,13 @@ const PoliciesList = () => {
 
         setLoadingSummaries(prev => ({...prev, [key]: true}));
         try {
-            const response = await fetch('http://localhost:5000/api/summarize/', {
+            const response = await fetch('https://api-inference.huggingface.co/models/Ydrhan/Linawa-ai-summarizer', {
               method: 'POST',
               headers: {
+                'Authorization': process.env.API_KEY,
                 'Content-Type': 'application/json',
               },
-              body: JSON.stringify({ text }), // Send the text
+              body: JSON.stringify({ inputs: text }), // Send the text
             });
         
             if (!response.ok) {
