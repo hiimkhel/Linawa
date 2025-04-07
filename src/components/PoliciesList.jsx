@@ -16,7 +16,7 @@ const PoliciesList = () => {
             const response = await fetch('https://api-inference.huggingface.co/models/Ydrhan/Linawa-ai-summarizer', {
               method: 'POST',
               headers: {
-                'Authorization': process.env.API_KEY,
+                'Authorization': `Bearer ${process.env.API_KEY}`,
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify({ inputs: text }), // Send the text
