@@ -13,7 +13,7 @@ const PoliciesList = () => {
 
         setLoadingSummaries(prev => ({...prev, [key]: true}));
         try{
-            const response = await axios.post("https://huggingface.co/spaces/Ydrhan/linawa-ai-model/api/predict", {
+            const response = await axios.post("https:linawa-backend-api.onrender.com/api/summarize/", {
                 text
             });
             setSummaries(prev =>({
