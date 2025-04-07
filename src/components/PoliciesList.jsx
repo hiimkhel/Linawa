@@ -10,13 +10,15 @@ const PoliciesList = () => {
   const [loadingSummaries, setLoadingSummaries] = useState({});
 
     const handleSummarize = async (key, text) =>{
+        const API_KEY = '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'
 
         setLoadingSummaries(prev => ({...prev, [key]: true}));
         try {
-            const response = await fetch('https://api-inference.huggingface.co/models/Ydrhan/Linawa-ai-summarizer', {
+            
+            const response = await fetch('https://cors-anywhere.herokuapp.com/https://api-inference.huggingface.co/models/Ydrhan/Linawa-ai-summarizer', {
               method: 'POST',
               headers: {
-                'Authorization': `Bearer ${process.env.REACT_APP_API_KEY}`,
+                'Authorization': `Bearer ${API_KEY}`,
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify({ inputs: text }), // Send the text
