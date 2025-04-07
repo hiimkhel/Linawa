@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.post('/',  async (req, res) => {
     try {
-      const response = await axios.post('https://linawa-backend-api.onrender.com/api/summarize/', {
+      const response = await axios.post("https://huggingface.co/spaces/Ydrhan/linawa-ai-model/api/predict", {
         text: req.body.text,
       });
       res.json(response.data);
