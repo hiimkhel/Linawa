@@ -13,7 +13,7 @@ const PoliciesList = () => {
 
         setLoadingSummaries(prev => ({...prev, [key]: true}));
         try{
-            const response = await axios.post("https:linawa-backend-api.onrender.com/api/summarize/", {
+            const response = await axios.post("https://linawa-backend-api.onrender.com/api/summarize/", {
                 text
             });
             setSummaries(prev =>({
