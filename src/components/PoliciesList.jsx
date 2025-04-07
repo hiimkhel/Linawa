@@ -12,18 +12,27 @@ const PoliciesList = () => {
     const handleSummarize = async (key, text) =>{
 
         setLoadingSummaries(prev => ({...prev, [key]: true}));
-        try{
-            const response = await axios.post("https://linawa-backend-api.onrender.com/api/summarize/", {
-                text
+        try {
+            const response = await fetch('http://localhost:5000/api/summarize', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ text }), // Send the text
             });
-            setSummaries(prev =>({
-                ...prev,
-                [key]: response.data.summary,
+        
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+        
+            const data = await response.json();
+            setSummaries(prev => ({
+              ...prev,
+              [key]: data?.data[0], // Assuming the response contains 'data' with a summarized text
             }));
-        }catch(err){
-            console.error("Error summarizing", err);
-        }
-
+          } catch (err) {
+            console.error('Error summarizing:', err);
+          }
         setLoadingSummaries(prev => ({...prev, [key]: false}))
     }
 
