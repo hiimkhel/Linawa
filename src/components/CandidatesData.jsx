@@ -154,7 +154,47 @@ const candidates = [
     experience: "Former House Representative",
     previousPosition: "Representative",
     achievements: "Led initiatives on housing and livelihood programs"
-  }
+  },
+  {
+    name: "David D'Angelo",
+    party: "Bunyog Pagkakaisa Party",
+    alliance: "—",
+    image: "/david-dangelo.webp",
+    position: "—",
+    age: 47,
+    hometown: "—",
+    education: "Bachelor of Science in Accountancy",
+    experience: "Environmental advocate and events organizer.",
+    previousPosition: "—",
+    achievements: "Environmental sustainability, social justice, and governance reforms.",
+},
+{
+    name: "Eric Martinez",
+    party: "Independent",
+    alliance: "—",
+    image: "/eric-martinez.jpg",
+    position: "—",
+    age: 52,
+    hometown: "Valenzuela City",
+    education: "Bachelor of Science in Business Administration",
+    experience: "Member of the House of Representatives for Valenzuela's 2nd district.",
+    previousPosition: "Valenzuela City Representative",
+    achievements: "Advocate for lowering the salaries of congressmen and senators.",
+},
+{
+    name: "Ernesto Arellano",
+    party: "Kamalayang Kayumanggi",
+    alliance: "—",
+    image: "/ernesto-arellano.webp",
+    position: "—",
+    age: 84,
+    hometown: "—",
+    education: "—",
+    experience: "Lawyer with a focus on social justice and equality.",
+    previousPosition: "",
+    achievements: "Advocate for creating a more equitable society.",
+}
+
 ];
 
 export default candidates;
